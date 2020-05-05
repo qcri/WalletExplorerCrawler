@@ -1,6 +1,6 @@
 # WalletExplorerCrawler
 
-Focused WalletExplorer.com Crawling.
+Focused WalletExplorer.com Crawling
 
 ---
 
