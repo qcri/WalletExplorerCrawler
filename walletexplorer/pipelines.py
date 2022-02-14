@@ -74,9 +74,9 @@ class WalletexplorerPipeline(object):
         }
 
         if 'page' in response.url:
-            self.es.update(index=self.index, doc_type=self.type, id=document_hash, body=update_tag)
+            self.es.update(index=self.index, id=document_hash, body=update_tag)
         else:
-            self.es.index(index=self.index, id=document_hash, doc_type=self.type, body=tag)
+            self.es.index(index=self.index, id=document_hash, body=tag)
 
         spider.logger.info("Page exported to ElasticSearch index %s at %s:%s" % (self.index, self.server, self.port))
 

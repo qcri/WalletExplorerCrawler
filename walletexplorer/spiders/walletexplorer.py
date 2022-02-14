@@ -38,7 +38,7 @@ class WalletExplorerCrawler(scrapy.Spider):
         item["type"] = response.meta["type"]
         item["name"] = response.meta["name"]
         item["response"] = response
-        item["timestamp"] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        item["timestamp"] = int(datetime.now().timestamp() * 1000)
 
         if 'page' not in response.url:
             service_url = response.xpath('/html//span[@class = "showother"]//a[1]/@href')[0].extract() \
